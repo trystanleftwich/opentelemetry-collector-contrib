@@ -65,6 +65,7 @@ func TestDefaultLogsMarshalers(t *testing.T) {
 		"otlp_proto",
 		"otlp_json",
 		"raw",
+		"loki",
 	}
 	marshalers := logsMarshalers()
 	assert.Equal(t, len(expectedEncodings), len(marshalers))
