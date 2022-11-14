@@ -15,10 +15,16 @@
 package kafkaexporter // import "github.com/open-telemetry/opentelemetry-collector-contrib/exporter/kafkaexporter"
 
 import (
+	"fmt"
+
 	"github.com/Shopify/sarama"
+	"github.com/gogo/protobuf/proto"
+	"github.com/golang/snappy"
 	"go.opentelemetry.io/collector/pdata/plog"
 	"go.opentelemetry.io/collector/pdata/pmetric"
 	"go.opentelemetry.io/collector/pdata/ptrace"
+
+	"github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/loki"
 )
 
 type pdataLogsMarshaler struct {
@@ -105,5 +111,47 @@ func newPdataTracesMarshaler(marshaler ptrace.Marshaler, encoding string) Traces
 	return pdataTracesMarshaler{
 		marshaler: marshaler,
 		encoding:  encoding,
+	}
+}
+
+type lokiLogsMarshaler struct {
+	encoding string
+}
+
+func (p lokiLogsMarshaler) Marshal(ld plog.Logs, topic string) ([]*sarama.ProducerMessage, error) {
+	pushReq, response := loki.LogsToLoki(ld)
+	// if len(pushReq.Streams) == 0 {
+	// return consumererror.NewPermanent(fmt.Errorf("failed to transform logs into Loki log streams"))
+	// }
+	if len(response.Errors) > 0 {
+		fmt.Println(
+			"not all log entries were converted to Loki",
+			"dropped", response.NumDropped,
+			"submitted", response.NumSubmitted,
+		)
+	}
+	// }
+
+	buf, err := proto.Marshal(pushReq)
+	if err != nil {
+		return nil, err
+	}
+	buf = snappy.Encode(nil, buf)
+	// buf, err := loki.encode(pushReq)
+	return []*sarama.ProducerMessage{
+		{
+			Topic: topic,
+			Value: sarama.ByteEncoder(buf),
+		},
+	}, nil
+}
+
+func (p lokiLogsMarshaler) Encoding() string {
+	return p.encoding
+}
+
+func newLokiLogsMarshaler(encoding string) LogsMarshaler {
+	return lokiLogsMarshaler{
+		encoding: encoding,
 	}
 }
