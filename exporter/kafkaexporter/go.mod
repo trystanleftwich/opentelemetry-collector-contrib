@@ -11,7 +11,7 @@ require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/jaeger v0.64.0
 	github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/loki v0.64.0
 	github.com/stretchr/testify v1.8.1
-	github.com/trystanleftwich/opentelemetry-collector-contrib/internal/coreinternal v0.64.0
+	github.com/trystanleftwich/opentelemetry-collector-contrib/internal/coreinternal v0.0.0-20221114053639-7bca75bfc24f
 	github.com/xdg-go/scram v1.1.1
 	go.opentelemetry.io/collector v0.64.2-0.20221110222631-20e3aac00413
 	go.opentelemetry.io/collector/pdata v0.64.2-0.20221110222631-20e3aac00413
