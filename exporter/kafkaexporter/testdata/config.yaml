@@ -1,4 +1,6 @@
 kafka:
+  resource_to_telemetry_conversion:
+    enabled: true
   topic: spans
   brokers:
     - "foo:123"
