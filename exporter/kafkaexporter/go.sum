@@ -940,10 +940,10 @@ github.com/onsi/gomega v1.10.1/go.mod h1:iN09h71vgCQne3DLsj+A5owkum+a2tYe+TOCB1y
 github.com/onsi/gomega v1.10.3/go.mod h1:V9xEwhxec5O8UDM77eCW8vLymOMltsqPVYWrpDsH8xc=
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal v0.66.0 h1:+aczm6gEKlWMd1Dx7xCg2cZtlIrB6t2HBB3KO3+G/4Y=
 github.com/open-telemetry/opentelemetry-collector-contrib/internal/coreinternal v0.66.0/go.mod h1:0C+C94bHN2OpKbKWLF5eRAZq4PngUUOxwt3RFHuw+Io=
-github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry v0.64.0 h1:s+o8etLMu6wLm+iNE0A2mj71hqn1gMy/EmMvs99gpnc=
-github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry v0.64.0/go.mod h1:NXLo+jR2eisTG28/+UAtk7GJxdag/osWRP99PFbc0Is=
-github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/loki v0.64.0 h1:6IvLIKjVCzGBv94vf6LDJM034eKKxoT5/j+H6olH7nw=
-github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/loki v0.64.0/go.mod h1:H9ijgF12HdoGRYx8UjpaFBBXTEaaKBTO4QgkiFAA6QM=
+github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry v0.66.0 h1:9YMRxke8epHmm//BxHet6uySE+aI9OIzTjJ/ugQZ/pc=
+github.com/open-telemetry/opentelemetry-collector-contrib/pkg/resourcetotelemetry v0.66.0/go.mod h1:HFlkULo7wIj66tpH5XONIZ+nVnHmxzmpmjlM1Lsi2fc=
+github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/loki v0.66.0 h1:o1BIDATK+/vvf47003NWlPEBbLjMEXeFm6eYk4xAdKc=
+github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/loki v0.66.0/go.mod h1:PLECQttyefyxONXscw3a+TEAuTHVzyXnI7Kq18ZHrfg=
 github.com/opencontainers/go-digest v0.0.0-20170106003457-a6d0ee40d420/go.mod h1:cMLVZDEM3+U2I4VmLI6N8jQYUd2OVphdqWwCJHrFt2s=
 github.com/opencontainers/go-digest v0.0.0-20180430190053-c9281466c8b2/go.mod h1:cMLVZDEM3+U2I4VmLI6N8jQYUd2OVphdqWwCJHrFt2s=
 github.com/opencontainers/go-digest v1.0.0-rc1/go.mod h1:cMLVZDEM3+U2I4VmLI6N8jQYUd2OVphdqWwCJHrFt2s=
